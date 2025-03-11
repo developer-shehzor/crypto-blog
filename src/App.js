@@ -3,9 +3,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import styles from "./App.module.css";
+import Protected from "./components/Protected/Protected";
 
 
 function App() {
+  const isAuth = true;
+
   return (
     <div className={styles.container}>
       <BrowserRouter>
@@ -30,20 +33,28 @@ function App() {
             <Route 
               path="/blogs" 
               exact 
-              element={<div className={styles.main}>BlogsPage</div>} 
+              element={
+                <Protected isAuth={isAuth}>
+              <div className={styles.main}>BlogsPage</div>
+              </Protected>
+              } 
             />
             <Route 
               path="/submit" 
               exact 
-              element={<div className={styles.main}>SubmitBlog </div>} 
+              element={
+                <Protected isAuth={isAuth}>
+              <div className={styles.main}>SubmitBlog </div>
+              </Protected>
+              } 
             />
             <Route 
-              path="/sign-up" 
+              path="/signup" 
               exact 
               element={<div className={styles.main}>SignIn</div>} 
             />
             <Route 
-              path="/log-in" 
+              path="/login" 
               exact 
               element={<div className={styles.main}>Login</div>} 
             />
