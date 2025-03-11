@@ -50,7 +50,7 @@ const Navbar = () => {
         {isAuthenticated ? <div><NavLink><button className={styles.signOutButton}>Sign Out</button></NavLink> </div> 
         : <div>
         <NavLink
-          to="/log-in"
+          to="/login"
           className={({ isActive }) =>
             isActive ? styles.activeStyle : styles.inActiveStyle
           }
@@ -59,7 +59,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink
-          to="sign-up"
+          to="signup"
           className={({ isActive }) =>
             isActive ? styles.activeStyle : styles.inActiveStyle
           }
