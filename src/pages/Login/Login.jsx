@@ -37,10 +37,10 @@ const Login = () => {
             navigate('/')
         }
 
-        else if (response.code === 'ERR_BAD_REQUEST') {
-            // display error message
-            setError(response.response.data.errorMessage);
-        }
+        else if (response.code === "ERR_BAD_REQUEST") {
+          // display error message
+          setError(response.response.data.message);
+        } 
     }
 
     const {values, touched, handleBlur, handleChange, errors} = useFormik({
@@ -76,7 +76,7 @@ const Login = () => {
       <span>Don't have an account? 
         <button className={styles.createAccount} onClick={() => navigate('/signup')}>Register</button>
       </span>
-      {error != '' ? <p className={styles.errorMessage}>{error}</p> : ''}
+      {error != "" ? <p className={styles.errorMessage}>{error}</p> : ""}
     </div>
   )
 }
