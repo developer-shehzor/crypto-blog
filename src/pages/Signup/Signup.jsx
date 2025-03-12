@@ -42,7 +42,7 @@ const Signup = () => {
 
         else if (response.code === 'ERR_BAD_REQUEST') {
           // display error message
-          setError(response.response.data.errorMessage);
+          setError(response.response.data.message);
         }
     }
 
@@ -112,7 +112,13 @@ const Signup = () => {
       error={errors.confirmPassword && touched.confirmPassword ? 1 : undefined} 
       errormessage={errors.confirmPassword}  />
 
-      <button className={styles.signupButton} onClick={handleSignup}>Sign Up</button>
+      <button 
+      disabled={!values.username || !values.password || errors.username 
+        || errors.password || errors.confirmPassword || errors.name || errors.email} 
+      className={styles.signupButton} 
+      onClick={handleSignup}>
+        Sign Up
+      </button>
 
       <span>
         Already have an account?{" "}
