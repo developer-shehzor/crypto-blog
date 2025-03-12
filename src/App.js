@@ -19,11 +19,11 @@ function App() {
         <div className={styles.layout}>
           <Navbar />
           <Routes>
-            <Route 
+            {/* <Route 
               path="/" 
               exact 
               element={<div className={styles.main}>CoinBounce</div>} 
-            />
+            /> */}
             <Route 
               path="/" 
               exact 
