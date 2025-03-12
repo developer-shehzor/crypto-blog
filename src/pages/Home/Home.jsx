@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getNews } from "../../api/external"
 import styles from "./Home.module.css"
+import Loader from "../../components/Loader/Loader"
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
@@ -20,6 +21,10 @@ const Home = () => {
   const handleCardClick = (url) => {
     window.open(url, '_blank');
   };
+
+  if (articles.length === 0){
+    return <Loader text="homepage" />
+  }
 
   return (
     <>
