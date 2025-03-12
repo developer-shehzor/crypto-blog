@@ -77,9 +77,9 @@ const Login = () => {
       onClick={handleLogin}>
         Log In
       </button>
-      <span>Don't have an account? 
-        <button className={styles.createAccount} onClick={() => navigate('/signup')}>Register</button>
-      </span>
+      <div>Don't have an account? 
+        <span className={styles.createAccount} onClick={() => navigate('/signup')}>Register</span>
+      </div>
       {error != "" ? <p className={styles.errorMessage}>{error}</p> : ""}
     </div>
   )

@@ -113,20 +113,20 @@ const Signup = () => {
       errormessage={errors.confirmPassword}  />
 
       <button 
-      disabled={!values.username || !values.password || errors.username 
+      disabled={!values.username || !values.password || !values.name || !values.confirmPassword || !values.email || errors.username 
         || errors.password || errors.confirmPassword || errors.name || errors.email} 
       className={styles.signupButton} 
       onClick={handleSignup}>
         Sign Up
       </button>
 
-      <span>
+      <div className={styles.logindiv}>
         Already have an account?{" "}
-        <button className={styles.login} 
+        <span className={styles.login} 
         onClick={() => navigate('/login')}>
           Log In
-        </button>
-      </span>
+        </span>
+      </div>
 
       {error != '' ? <p className={styles.errorMessage}>{error}</p> : ''}
     </div>
