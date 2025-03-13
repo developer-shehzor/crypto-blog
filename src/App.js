@@ -8,6 +8,7 @@ import Error from "./pages/Error/Error";
 import Login from "./pages/Login/Login";
 import { useSelector } from "react-redux";
 import Signup from "./pages/Signup/Signup";
+import Crypto from "./pages/Crypto/Crypto";
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
             <Route 
               path="/crypto" 
               exact 
-              element={<div className={styles.main}>CryptoPage</div>} 
+              element={<div className={styles.main}><Crypto /></div>} 
             />
             <Route 
               path="/blogs" 
