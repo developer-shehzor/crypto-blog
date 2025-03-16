@@ -45,3 +45,16 @@ export const signout = async () => {
 
     return response;
 }
+
+export const getAllBlogs = async () => {
+    let response;
+
+    try {
+        response = await api.get('/blog/all');
+    }
+    catch(error) {
+        return error;
+    }
+
+    return response;
+}
