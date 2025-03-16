@@ -26,11 +26,13 @@ const Blog = () => {
   return (
     <div className={styles.blogsWrapper}>
       {blogs.map((blog) => {
+        return (
         <div id={blog._id} className={styles.blog}>
           <h1>{blog.title}</h1>
           <img src={blog.photo} alt="" />
           <p>{blog.content}</p>
         </div>
+        )
       })}
     </div>
   )

@@ -58,3 +58,16 @@ export const getAllBlogs = async () => {
 
     return response;
 }
+
+export const submitBlog = async (data) => {
+    let response;
+
+    try {
+        response = await api.post('/blog', data);
+    }
+    catch(error) {
+        return error;
+    }
+
+    return response;
+}
