@@ -2,10 +2,13 @@ import { useEffect, useState } from "react"
 import Loader from "../../components/Loader/Loader"
 import { getAllBlogs } from "../../api/internal"
 import styles from "./Blog.module.css"
+import { useNavigate } from "react-router-dom"
 
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async function getAllBlogsApiCall() {
@@ -27,7 +30,7 @@ const Blog = () => {
     <div className={styles.blogsWrapper}>
       {blogs.map((blog) => {
         return (
-        <div id={blog._id} className={styles.blog}>
+        <div id={blog._id} className={styles.blog} onClick={() => navigate(`/blog/${blog._id}`)}>
           <h1>{blog.title}</h1>
           <img src={blog.photo} alt="" />
           <p>{blog.content}</p>
