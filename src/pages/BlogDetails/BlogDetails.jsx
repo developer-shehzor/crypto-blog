@@ -60,6 +60,10 @@ const BlogDetails = () => {
         navigate('/');
       }
     }
+
+    if (blog.length === 0){
+      return <Loader text="blog-details" />
+    }
     
   return (
     <div className={styles.detailsWrapper}>
@@ -75,10 +79,10 @@ const BlogDetails = () => {
         {
           ownsBlog && (
             <div className={styles.controls}>
-              <button className={styles.edit} onClick={() => {}}>
+              <button className={styles.editButton} onClick={() => {navigate(`/blog/update/${blog._id}`)}}>
                 Edit
               </button>
-              <button className={styles.delete} onClick={deleteBlogHandler}>
+              <button className={styles.deleteButton} onClick={deleteBlogHandler}>
                 Delete
               </button>
             </div>
