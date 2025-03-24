@@ -79,7 +79,7 @@ const BlogDetails = () => {
         {
           ownsBlog && (
             <div className={styles.controls}>
-              <button className={styles.editButton} onClick={() => {navigate(`/blog/update/${blog._id}`)}}>
+              <button className={styles.editButton} onClick={() => {navigate(`/blog-update/${blog._id}`)}}>
                 Edit
               </button>
               <button className={styles.deleteButton} onClick={deleteBlogHandler}>

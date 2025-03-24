@@ -9,10 +9,11 @@ const CommentList = ({comments}) => {
         {comments.length === 0 ? 
         (
           <div className={styles.noComments}>No comments posted</div>
-        ) : 
-        comments.map(comment => (
-          <Comment key={comment._id} comment={comment} />
-        ))}
+        ) : (
+          comments.map((comment) => (
+            <Comment key={comment._id} comment={comment} />
+          ))
+        )}
       </div>
     </div>
   )
