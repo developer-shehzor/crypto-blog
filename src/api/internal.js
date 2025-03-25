@@ -137,3 +137,31 @@ export const updateBlog = async (data) => {
     }
     return response;
 }
+
+// auto token refresh
+
+// protected-resource return -> 401
+// refresh response then we will come in -> authenticated state
+// protected-resource
+
+api.interceptors.response.use(
+    config => config,
+    async (error) => {
+        const originalReq = error.config;
+
+        if ((error.response.status === 401 || error.response.status === 500) && originalReq && !originalReq.isRetry) {
+            originalReq.isRetry = true;
+
+            try {
+                await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`, {
+                    withCredentials: true
+                });
+
+                return api.request(originalReq);
+            }
+            catch (error) {
+                return error;
+            }
+        }
+    }
+)
