@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
       <nav className={styles.navbar}>
         <NavLink to="/" className={`${styles.logo} ${styles.inActiveStyle}`}>
-          CoinBounce
+          TokenWave
         </NavLink>
 
         <NavLink

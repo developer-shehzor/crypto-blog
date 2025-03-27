@@ -56,7 +56,7 @@ const BlogDetails = () => {
     const deleteBlogHandler = async () => {
       const response = await deleteBlog(blogId)
 
-      if (response === 200) {
+      if (response.status === 200) {
         navigate('/');
       }
     }
